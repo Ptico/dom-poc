@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Helloworld</title>
+
+</head>
+<body>
+  <div id="example">
+
+  </div>
+  <script src="helloworld.js" type="application/javascript"></script>
+  <script>
+    let widget = hello(
+      {firstName: 'Jack', lastName: 'Wolfskin'},
+      document.getElementById('example')
+    );
+
+    widget.set('lastName', 'Daniels');
+  </script>
+</body>
+</html>
