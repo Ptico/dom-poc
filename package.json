@@ -1,0 +1,38 @@
+{
+  "name": "dom-poc",
+  "version": "0.1.0",
+  "description": "DOM templating engine",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ptico/dom-poc.git"
+  },
+  "keywords": [
+    "DOM",
+    "templates"
+  ],
+  "author": "Andrii Savchenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ptico/dom-poc/issues"
+  },
+  "homepage": "https://github.com/Ptico/dom-poc#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-dom": "^1.8.1",
+    "esm": "^3.2.25",
+    "gulp": "^4.0.2",
+    "gulp-mocha": "^7.0.2",
+    "jsdom": "^16.2.0",
+    "mocha": "^7.1.0",
+    "rollup": "^2.0.0-2",
+    "sinon": "^9.0.0"
+  }
+}
