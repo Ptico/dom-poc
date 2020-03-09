@@ -1,6 +1,6 @@
 # Concepts
 
-The main idea is to use as much knoledge of the template as we can to avoid unnecessary computations and operations.
+The main idea is to use as much knowledge of the template as we can, to avoid unnecessary computations and operations.
 
 There is 3 types of optimizations:
 
@@ -90,9 +90,11 @@ el('form', {
 })
 ```
 
+Note, that we don't store the references for other elements because they will never change.
+
 ### Reference computed value caching (should be benchmarked and improved)
 
-We store the last computed value in the Reference object to compare the new computed value and not update the node when values are the same. However, it might have a significant memory impact, especially for InnerTextReferences, so consider to measure the length of the resulting string before enforcing this optimization.
+We store the last computed value in the Reference object to compare with new computed value and not update the node when values are the same. However, it might have a significant memory impact, especially for InnerTextReferences, so consider to measure the length of the resulting string before enforcing this optimization.
 
 ## Planned
 
@@ -104,7 +106,7 @@ This could be useful for `if/else` statements. Instead of destroying rendered DO
 
 ### Static nodes caching
 
-In some cases, nodes which doesn't have any references, can be cached to use them with document.cloneNode(). This is especially useful for partials/components which is used more than once in one page. Can be user or compile or runtime optimization
+In some cases, nodes which doesn't have any references, can be cached to use them with `document.cloneNode()`. This is especially useful for partials/components which is used more than once in one page. Can be user or compile or runtime optimization
 
 ### Collection DOM cloning and Reference path
 
