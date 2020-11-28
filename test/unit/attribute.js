@@ -48,12 +48,27 @@ describe('Attributes', function() {
 
       expect(node).to.have.attribute('href', 'https://example2.com/');
     });
+
+    it('does not update node', function() {
+      let attrTest = template([
+        el('a', { id: 'testing', href: (data) => { return data.url } })
+      ]);
+
+      let data = { url: 'https://example2.com/' };
+
+      let widget = attrTest(data, document.getElementById('example'));
+      let node = document.getElementById('testing');
+
+      widget.set('url', 'https://test.com/');
+
+      expect(node).to.have.attribute('href', 'https://example2.com/');
+    });
   });
 
   context('Reference', function() {
     it('renders string values', function() {
       let attrTest = template([
-        el('a', { id: 'testing', href: ref('url', (data) => { return data.url } )})
+        el('a', { id: 'testing', href: ref(['url'], (data) => { return data.url } )})
       ]);
 
       let data = { url: 'https://example3.com/' };
@@ -62,6 +77,21 @@ describe('Attributes', function() {
       let node = document.getElementById('testing');
 
       expect(node).to.have.attribute('href', 'https://example3.com/');
+    });
+
+    it('does update node', function() {
+      let attrTest = template([
+        el('a', { id: 'testing', href: ref(['url'], (data) => { return data.url } )})
+      ]);
+
+      let data = { url: 'https://example3.com/' };
+
+      let widget = attrTest(data, document.getElementById('example'));
+      let node = document.getElementById('testing');
+
+      widget.set('url', 'https://test.com/');
+
+      expect(node).to.have.attribute('href', 'https://test.com/');
     });
   });
 });
