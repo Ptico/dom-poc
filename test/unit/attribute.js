@@ -6,7 +6,7 @@ import chaiDom from 'chai-dom'
 use(chaiDom);
 
 import template from '../../lib/template';
-import {el, text} from '../../lib/nodes';
+import el from '../../lib/nodes/element';
 import ref from '../../lib/ref';
 
 let dom = new JSDOM(`<div id="example"></div>`);

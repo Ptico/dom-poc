@@ -1,7 +1,8 @@
 // This is supposed to be result of parsing
 
 import template from '../lib/template';
-import {el, text} from '../lib/nodes';
+import el from '../lib/nodes/element';
+import text from '../lib/nodes/text';
 import ref from '../lib/ref';
 
 window.hello = template([
